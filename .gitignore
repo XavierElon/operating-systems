@@ -1,0 +1,14 @@
+*.dSYM
+*.o
+*.exe
+*.out
+*.bin
+*.hex
+*.lst
+*.map
+*.sym
+*.dbg
+*.dbg2
+*.dbg3
+*.dbg4
+*.dbg5

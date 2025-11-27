@@ -25,6 +25,7 @@ process: process.c
 # Clean up compiled files
 clean:
 	rm -f $(TARGETS)
+	rm -rf *.dSYM  # Remove debug symbol bundles
 
 run-fork: fork
 	@echo "=== Running fork file ==="
