@@ -4,7 +4,7 @@
 
 CC = gcc
 CFLAGS = -Wall -Wextra -g # -g adds debugging symbols
-TARGETS = fork wait
+TARGETS = fork wait exec
 
 # Default target (run: make)
 all: $(TARGETS)
@@ -13,12 +13,27 @@ all: $(TARGETS)
 fork: fork.c
 	$(CC) $(CFLAGS) -o fork fork.c
 
-wait: wait.C
+wait: wait.c
 	$(CC) $(CFLAGS) -o wait wait.c
+
+exec: exec.c
+	$(CC) $(CFLAGS) -o exec exec.c
 
 # Clean up compiled files
 clean:
 	rm -f $(TARGETS)
+
+run-fork: fork
+	@echo "=== Running fork file ==="
+	./fork
+
+run-wait: wait
+	@echo "=== Running wait file ==="
+	./wait
+
+run-exec: exec
+	@echo "=== Running exec file ==="
+	./exec
 
 # Run all examples (for testing)
 run: all
@@ -26,5 +41,7 @@ run: all
 	./fork
 	@echo "=== Running wait file ==="
 	./wait
+	@echo "=== Running exec file ==="
+	./exec
 
 .PHONY: all clean run
