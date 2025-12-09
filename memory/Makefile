@@ -29,9 +29,9 @@ run-mmapped-file: mmapped_file
 	@echo "=== Running mmapped_file ==="
 	./mmapped_file
 
-run-heap: heap_basics
-	@echo "=== Running heap_basics ==="
-	./heap_basics
+run-heap: heap
+	@echo "=== Running heap ==="
+	./heap
 
 run-virtual: virtual_memory
 	@echo "=== Running virtual_memory ==="
